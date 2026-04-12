@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { Header } from "@/components/spine33/header"
 import { Hero } from "@/components/spine33/hero"
 import { Features } from "@/components/spine33/features"
@@ -18,7 +19,9 @@ export default function Home() {
       <About />
       <Doctors />
       <Services />
-      <ContactForm />
+      <Suspense fallback={null}>
+        <ContactForm />
+      </Suspense>
       <Testimonials />
       <CTABanner />
       <Footer />

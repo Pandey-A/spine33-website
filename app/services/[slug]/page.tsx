@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -101,13 +102,15 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      <ContactForm
-        defaultService={service.title}
-        sectionId="service-contact-form"
-        showSpecialties={false}
-        title={`Consult for ${service.title}`}
-        subtitle="Fill this quick form and our team will call you to guide the next step."
-      />
+      <Suspense fallback={null}>
+        <ContactForm
+          defaultService={service.title}
+          sectionId="service-contact-form"
+          showSpecialties={false}
+          title={`Consult for ${service.title}`}
+          subtitle="Fill this quick form and our team will call you to guide the next step."
+        />
+      </Suspense>
 
       <Footer />
     </main>

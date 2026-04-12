@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -114,13 +115,15 @@ export default async function ReadMorePage({ params }: ReadMorePageProps) {
         </div>
       </section>
 
-      <ContactForm
-        defaultService={article.featureTitle}
-        sectionId="lead-form"
-        showSpecialties={false}
-        title="Start Your Recovery Plan"
-        subtitle="Share your details and our specialists will contact you with the next best step."
-      />
+      <Suspense fallback={null}>
+        <ContactForm
+          defaultService={article.featureTitle}
+          sectionId="lead-form"
+          showSpecialties={false}
+          title="Start Your Recovery Plan"
+          subtitle="Share your details and our specialists will contact you with the next best step."
+        />
+      </Suspense>
 
       <Footer />
     </main>
