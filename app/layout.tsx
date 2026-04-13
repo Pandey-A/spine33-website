@@ -7,21 +7,7 @@ export const metadata: Metadata = {
   description: 'We are Posture and Back Pain Specialists. Our sole focus is to take the pain out of your life – anything arising out of your spine.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon/favicon.svg',
   },
 }
 
