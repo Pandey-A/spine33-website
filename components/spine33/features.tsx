@@ -48,62 +48,64 @@ export function Features() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   return (
-    <section id="features" className="py-0">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className={`bg-gradient-to-b ${feature.gradient} p-6 lg:p-8 flex flex-col`}
-          >
-            <div className="w-16 h-16 rounded-full bg-white/30 flex items-center justify-center mb-4">
-              <feature.icon className="w-8 h-8 text-[#1a0000]" />
-            </div>
-            <h3 className="text-xl font-serif font-bold text-[#1a0000] mb-3">
-              {feature.title}
-            </h3>
-            <p className="text-[#1a0000]/80 text-sm leading-relaxed mb-4 flex-grow">
-              {feature.description}
-            </p>
-
-            {!feature.hasDropdown && (
-              <Link
-                href={feature.readMoreHref}
-                className="inline-flex items-center justify-center px-4 py-2 rounded border border-[#1a0000] text-[#1a0000] text-sm font-medium hover:bg-[#1a0000] hover:text-white transition-colors mt-auto w-fit"
-              >
-                Read More
-              </Link>
-            )}
-            
-            {feature.hasDropdown && (
-              <div className="relative mt-auto">
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="w-full flex items-center justify-between px-4 py-3 bg-white rounded border border-[#1a0000]/20 text-[#1a0000] text-sm"
-                >
-                  <span>{selectedDoctor || "Select Doctor"}</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {dropdownOpen && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded border border-[#1a0000]/20 shadow-lg z-10">
-                    {doctors.map((doctor) => (
-                      <button
-                        key={doctor}
-                        onClick={() => {
-                          setSelectedDoctor(doctor)
-                          setDropdownOpen(false)
-                          router.push(`/?doctor=${encodeURIComponent(doctor)}#contact-form`)
-                        }}
-                        className="w-full px-4 py-2 text-left text-sm text-[#1a0000] hover:bg-[#f9c722]/20 transition-colors"
-                      >
-                        {doctor}
-                      </button>
-                    ))}
-                  </div>
-                )}
+    <section id="features" className="relative z-20  md:-mt-8 lg:-mt-18 pb-8 md:pb-12  ">
+      <div className="max-w-7xl mx-auto px-0 sm:px-4 md:px-6 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 bg-[#1a0000]/10 border border-[#1a0000]/10 rounded-lg overflow-hidden">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className={`bg-gradient-to-b ${feature.gradient} p-6 lg:p-8 flex flex-col border-b sm:border-b-0 border-[#1a0000]/20`}
+            >
+              <div className="w-16 h-16 rounded-full bg-white/30 flex items-center justify-center mb-4">
+                <feature.icon className="w-8 h-8 text-[#1a0000]" />
               </div>
-            )}
-          </div>
-        ))}
+              <h3 className="text-xl font-serif font-bold text-[#1a0000] mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-[#1a0000]/80 text-sm leading-relaxed mb-4 flex-grow">
+                {feature.description}
+              </p>
+
+              {!feature.hasDropdown && (
+                <Link
+                  href={feature.readMoreHref}
+                  className="inline-flex items-center justify-center px-4 py-2 rounded border border-[#1a0000] text-[#1a0000] text-sm font-medium hover:bg-[#1a0000] hover:text-white transition-colors mt-auto w-fit"
+                >
+                  Read More
+                </Link>
+              )}
+              
+              {feature.hasDropdown && (
+                <div className="relative mt-auto">
+                  <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="w-full flex items-center justify-between px-4 py-3 bg-white rounded border border-[#1a0000]/20 text-[#1a0000] text-sm"
+                  >
+                    <span>{selectedDoctor || "Select Doctor"}</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {dropdownOpen && (
+                    <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded border border-[#1a0000]/20 shadow-lg z-10">
+                      {doctors.map((doctor) => (
+                        <button
+                          key={doctor}
+                          onClick={() => {
+                            setSelectedDoctor(doctor)
+                            setDropdownOpen(false)
+                            router.push(`/?doctor=${encodeURIComponent(doctor)}#contact-form`)
+                          }}
+                          className="w-full px-4 py-2 text-left text-sm text-[#1a0000] hover:bg-[#f9c722]/20 transition-colors"
+                        >
+                          {doctor}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

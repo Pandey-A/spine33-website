@@ -30,7 +30,7 @@ export function About() {
                 />
               </div>
               <div className="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-[#1a0000]/10 shadow-sm">
-                <p className="text-[#1a0000] font-semibold text-sm">Expert Care Since 2003</p>
+                <p className="text-[#1a0000] font-semibold text-sm">Expert Care Since 2006</p>
               </div>
             </div>
             

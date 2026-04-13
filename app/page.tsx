@@ -9,21 +9,36 @@ import { CTABanner } from "@/components/spine33/cta-banner"
 import { Services } from "@/components/spine33/services"
 import { ContactForm } from "@/components/spine33/contact-form"
 import { Footer } from "@/components/spine33/footer"
+import { ScrollFade } from "@/components/scroll-fade"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Features />
-      <About />
-      <Doctors />
-      <Services />
+      <ScrollFade>
+        <Features />
+      </ScrollFade>
+      <ScrollFade delay={100}>
+        <About />
+      </ScrollFade>
+      <ScrollFade delay={200}>
+        <Doctors />
+      </ScrollFade>
+      <ScrollFade delay={100}>
+        <Services />
+      </ScrollFade>
       <Suspense fallback={null}>
-        <ContactForm />
+        <ScrollFade delay={100}>
+          <ContactForm />
+        </ScrollFade>
       </Suspense>
-      <Testimonials />
-      <CTABanner />
+      <ScrollFade delay={100}>
+        <Testimonials />
+      </ScrollFade>
+      <ScrollFade>
+        <CTABanner />
+      </ScrollFade>
       <Footer />
     </main>
   )

@@ -5,15 +5,15 @@ export function CTABanner() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
           <div className="text-center lg:text-left">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-[#1a0000] text-balance">
-              Why suffer when there is a scientific way to manage your pain?
+              Know Your Treatment Options
             </h2>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <a
-              href="#contact"
+              href="#services"
               className="px-6 py-3 bg-[#1a0000] text-white font-medium rounded hover:bg-[#2a0000] transition-colors whitespace-nowrap text-center"
             >
-              JOIN OUR TEAM / SUBMIT YOUR CV
+              EXPLORE SERVICES
             </a>
             <a
               href="#contact-form"

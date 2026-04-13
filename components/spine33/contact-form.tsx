@@ -1,14 +1,14 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Phone } from "lucide-react"
 import emailjs from "@emailjs/browser"
 import { useRouter, useSearchParams } from "next/navigation"
 import { spineServices } from "@/lib/spine-services"
 
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_9vp45rs"
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_8ppt4vd"
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "vjx9LFYnhaXrb7FFd"
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_t9ce9ir"
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_4j4abl3"
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "sOcRWGwpoIz83_3ar"
 const DESTINATION_EMAIL = process.env.NEXT_PUBLIC_LEAD_DESTINATION_EMAIL || "spine33ngp@gmail.com"
 const HOSPITAL_ADDRESS = "Opp Rakshak Bandhu, Manewada Road, Nagpur, India, 440024"
 const MAP_QUERY = "Spine33+Clinic+Opp+Rakshak+Bandhu,+Manewada+Road,+Nagpur,+India,+440024"
@@ -216,6 +216,31 @@ export function ContactForm({
             </div>
           </div>}
         </div>
+      </div>
+
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        {/* WhatsApp Button */}
+        <a
+          href="https://wa.me/919890111333?text=Hello%20Spine33"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1FAA56] transition-all hover:scale-110"
+          title="Chat on WhatsApp"
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.184.631 4.21 1.714 5.947L.33 24l6.236-1.993C8.787 23.468 10.34 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.467 0-2.91-.347-4.186-.979l-.301-.165-3.116.998.998-3.088-.165-.301C2.597 16.91 2.25 15.467 2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75zm5.35-7.298c-.292-.146-1.727-.852-1.996-.948-.27-.095-.466-.146-.661.146-.196.293-.759.948-.93 1.142-.171.195-.342.22-.634.073-.292-.146-1.234-.455-2.354-1.453-.87-.776-1.457-1.733-1.628-2.026-.171-.293-.018-.451.128-.597.131-.132.292-.342.438-.512.146-.171.195-.293.293-.488.098-.196.049-.365-.024-.511-.074-.146-.661-1.586-.906-2.172-.239-.568-.48-.491-.66-.5-.171-.008-.366-.01-.561-.01-.196 0-.512.073-.78.366-.268.293-1.023.999-1.023 2.435 0 1.435 1.048 2.824 1.194 3.019.146.195 2.062 3.147 4.993 4.414.70.304 1.24.482 1.664.618.704.225 1.336.192 1.84.116.562-.087 1.728-.706 1.976-1.387.248-.682.248-1.267.174-1.387-.074-.122-.27-.196-.563-.341z" />
+          </svg>
+        </a>
+
+        {/* Call Button */}
+        <a
+          href="tel:+919890111333"
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-all hover:scale-110"
+          title="Call us"
+        >
+          <Phone size={24} />
+        </a>
       </div>
     </section>
   )
