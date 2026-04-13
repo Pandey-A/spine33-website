@@ -66,7 +66,7 @@ export function Features() {
                 {feature.description}
               </p>
 
-              {!feature.hasDropdown && (
+              {!feature.hasDropdown && feature.readMoreHref && (
                 <Link
                   href={feature.readMoreHref}
                   className="inline-flex items-center justify-center px-4 py-2 rounded border border-[#1a0000] text-[#1a0000] text-sm font-medium hover:bg-[#1a0000] hover:text-white transition-colors mt-auto w-fit"
