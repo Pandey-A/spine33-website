@@ -29,16 +29,16 @@ export function About() {
                   priority
                 />
               </div>
-              <div className="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-[#1a0000]/10 shadow-sm">
+              <div className="hidden sm:block absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-[#1a0000]/10 shadow-sm">
                 <p className="text-[#1a0000] font-semibold text-sm">Expert Care Since 2006</p>
               </div>
             </div>
             
             {/* Stats Card */}
-            <div className="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 bg-[#1a0000] text-white p-6 rounded-xl shadow-2xl border border-white/10">
+            <div className="absolute -bottom-4 -right-4 lg:right-auto lg:-left-6 bg-[#1a0000] text-white p-4 sm:p-6 rounded-xl shadow-2xl border border-white/10">
               <div className="text-center">
-                <p className="text-4xl font-serif font-bold text-[#f9c722]">20+</p>
-                <p className="text-sm uppercase tracking-wide">Years Experience</p>
+                <p className="text-3xl sm:text-4xl font-serif font-bold text-[#f9c722]">20+</p>
+                <p className="text-xs sm:text-sm uppercase tracking-wide">Years Experience</p>
               </div>
             </div>
           </div>
